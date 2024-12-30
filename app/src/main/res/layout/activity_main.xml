@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="15,3,#FF0000,#00FF00,#0000FF,3,0,0.5,1"
+            app:card_radius_percent="35%"
+            app:card_stroke_color="@android:color/black"
+            app:card_stroke_width="8dp" />
+
+    </FrameLayout>
+
+
+</layout>

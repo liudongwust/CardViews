@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Tab">
+        <attr name="tab_current" format="integer" />
+        <attr name="tab_titles" format="string" />
+        <attr name="tab_select_color" format="color" />
+        <attr name="tab_unselect_color" format="color" />
+        <attr name="tab_select_tx_size" format="dimension" />
+        <attr name="tab_unselect_tx_size" format="dimension" />
+        <attr name="tab_select_tx_bold" format="boolean" />
+        <attr name="tab_unselect_tx_bold" format="boolean" />
+        <attr name="tab_select_tx_font" format="string" />
+        <attr name="tab_unselect_tx_font" format="string" />
+        <attr name="tab_indicator_color" format="color" />
+        <attr name="tab_indicator_radius" format="dimension" />
+    </declare-styleable>
+
+</resources>

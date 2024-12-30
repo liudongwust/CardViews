@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Card">
+        <attr name="card_radius" format="dimension" />
+        <attr name="card_radius_LT" format="dimension" />
+        <attr name="card_radius_RT" format="dimension" />
+        <attr name="card_radius_LB" format="dimension" />
+        <attr name="card_radius_RB" format="dimension" />
+        <attr name="card_radius_percent" format="string" />
+        <attr name="card_radius_LT_percent" format="string" />
+        <attr name="card_radius_RT_percent" format="string" />
+        <attr name="card_radius_LB_percent" format="string" />
+        <attr name="card_radius_RB_percent" format="string" />
+        <attr name="card_stroke_width" format="dimension" />
+        <attr name="card_stroke_color" format="color" />
+        <attr name="card_dimension_ratio" format="string" />
+        <attr name="card_linear_gradient" format="string" /><!-- LEFT_RIGHT,colorsNum,#FFFFFF,#000000,#FF0000,positionNum,0,0.3,1 -->
+        <attr name="card_shadow" format="string" /> <!-- blur_radius,color -->
+        <attr name="card_shadow_type" format="enum">
+            <enum name="all" value="1" />
+            <enum name="half" value="2" />
+        </attr>
+
+        <attr name="card_corner_style" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="quad" value="1" />
+            <enum name="line" value="2" />
+            <enum name="cubic" value="3" />
+        </attr>
+
+        <attr name="card_cubic_coefficient" format="float" />
+
+        <attr name="card_stroke_style" format="enum">
+            <enum name="INNER" value="0" />
+            <enum name="OUTER" value="1" />
+        </attr>
+
+        <attr name="card_position">
+            <flag name="LT" value="0x01" />
+            <flag name="RT" value="0x02" />
+            <flag name="LB" value="0x04" />
+            <flag name="RB" value="0x08" />
+        </attr>
+
+
+    </declare-styleable>
+</resources>
