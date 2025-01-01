@@ -13,7 +13,7 @@ def hello_world():
     </code></pre>
   </div>
   <div style="flex: 1;">
-    ![img_1.png](img_1.png)
+    ![img_1.png](img.png)
   </div>
 </div>
 
