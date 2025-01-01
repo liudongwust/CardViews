@@ -25,19 +25,35 @@
     
     示例:
     ```
-    <com.wustfly.cardviews.TextCard
+    <FrameLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:card_linear_gradient="LEFT_RIGHT,2,#E09FA7,#7DCBD5,2,0,1" />
-    ```
-    ![img_2.png](pics/img_2.png)
-    ```
-    <com.wustfly.cardviews.TextCard
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:card_linear_gradient="12.5,3,#E09FA7,#66FFFF00,#7DCBD5,3,0,0.5,1" />
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:card_linear_gradient="LEFT_RIGHT,2,#E09FA7,#7DCBD5,2,0,1" />
+
+    </FrameLayout>
     ```
     ![img.png](pics/img.png)
+    ```
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:card_linear_gradient="12.5,3,#E09FA7,#66FFFF00,#7DCBD5,3,0,0.5,1" />
+
+    </FrameLayout>
+    ```
+    ![img_1.png](pics/img_1.png)
 
 - 固定高宽比View
 
@@ -67,7 +83,7 @@
 
     </FrameLayout>
     ```
-    ![img_1.png](pics/img_1.png)
+    ![img_2.png](pics/img_2.png)
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -84,4 +100,37 @@
 
     </FrameLayout>
     ```
-   ![img_3.png](pics/img_3.png)
+    ![img_3.png](pics/img_3.png)
+    配合LinearLayout的layout_weight属性做比例布局
+    ```
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:card_linear_gradient="LEFT_RIGHT,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_dimension_ratio="1:1" />
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            app:card_linear_gradient="LEFT_RIGHT,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_dimension_ratio="1:1" />
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            app:card_linear_gradient="LEFT_RIGHT,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_dimension_ratio="1:1" />
+
+    </LinearLayout>
+    ```
+    ![img_4.png](pics/img_4.png)

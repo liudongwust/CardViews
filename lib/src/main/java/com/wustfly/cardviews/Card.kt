@@ -78,6 +78,9 @@ class Card(val view: View, attrs: AttributeSet) {
 
     private var bg: Drawable? = null
 
+    private var width = 0
+    private var height = 0
+
     init {
         val ta = view.context.obtainStyledAttributes(attrs, R.styleable.Card)
         radius = ta.getDimension(R.styleable.Card_card_radius, 0f)
@@ -133,76 +136,88 @@ class Card(val view: View, attrs: AttributeSet) {
                 LEFT_RIGHT -> {
                     x1 = 0f
                     y1 = 0f
-                    x2 = view.measuredWidth.toFloat()
+                    x2 = width.toFloat()
                     y2 = 0f
                 }
 
                 LT_RB -> {
                     x1 = 0f
                     y1 = 0f
-                    x2 = view.measuredWidth.toFloat()
-                    y2 = view.measuredHeight.toFloat()
+                    x2 = width.toFloat()
+                    y2 = height.toFloat()
                 }
 
                 TOP_BOTTOM -> {
                     x1 = 0f
                     y1 = 0f
                     x2 = 0f
-                    y2 = view.measuredHeight.toFloat()
+                    y2 = height.toFloat()
                 }
 
                 RT_LB -> {
-                    x1 = view.measuredWidth.toFloat()
+                    x1 = width.toFloat()
                     y1 = 0f
                     x2 = 0f
-                    y2 = view.measuredHeight.toFloat()
+                    y2 = height.toFloat()
                 }
 
                 RIGHT_LEFT -> {
-                    x1 = view.measuredWidth.toFloat()
+                    x1 = width.toFloat()
                     y1 = 0f
                     x2 = 0f
                     y2 = 0f
                 }
 
                 RB_LT -> {
-                    x1 = view.measuredWidth.toFloat()
-                    y1 = view.measuredHeight.toFloat()
+                    x1 = width.toFloat()
+                    y1 = height.toFloat()
                     x2 = 0f
                     y2 = 0f
                 }
 
                 BOTTOM_TOP -> {
                     x1 = 0f
-                    y1 = view.measuredHeight.toFloat()
+                    y1 = height.toFloat()
                     x2 = 0f
                     y2 = 0f
                 }
 
                 LB_RT -> {
                     x1 = 0f
-                    y1 = view.measuredHeight.toFloat()
-                    x2 = view.measuredWidth.toFloat()
+                    y1 = height.toFloat()
+                    x2 = width.toFloat()
                     y2 = 0f
                 }
 
                 else -> {
                     val degree = orientation.toFloat() * Math.PI / 180f
 
-                    val r = sqrt(
-                        view.measuredWidth.toDouble().pow(2.0) + view.measuredHeight.toDouble()
-                            .pow(2.0)
-                    )
+                    val r = sqrt(width.toDouble().pow(2.0) + height.toDouble().pow(2.0))
 
-                    val x = (r * cos(degree) / 2).toFloat()
-                        .let { if (abs(it) < view.measuredWidth / 2f) it else sign(it) * (view.measuredWidth / 2f) }
+                    var x: Float
+                    var y: Float
+
+                    (r * cos(degree) / 2).toFloat().let {
+
+                        if (abs(it) > width / 2f) {
+                            x = sign(cos(degree).toFloat()) * (width / 2f)
+                            y = (x * tan(degree)).toFloat()
+                        } else {
+                            y = sign(sin(degree).toFloat()) * (height / 2f)
+                            x = (y / tan(degree)).toFloat()
+                        }
+
+                    }
+
+            /*        val x = (r * cos(degree) / 2).toFloat()
+                        .let { if (abs(it) < width / 2f) it else sign(it) * (width / 2f) }
                     val y = (r * sin(degree) / 2).toFloat()
-                        .let { if (abs(it) < view.measuredHeight / 2f) it else sign(it) * (view.measuredHeight / 2f) }
+                        .let { if (abs(it) < height / 2f) it else sign(it) * (height / 2f) }*/
 
-                    x1 = view.measuredWidth / 2f - x
-                    y1 = view.measuredHeight / 2f - y
-                    x2 = view.measuredWidth / 2f + x
-                    y2 = view.measuredHeight / 2f + y
+                    x1 = width / 2f - x
+                    y1 = height / 2f - y
+                    x2 = width / 2f + x
+                    y2 = height / 2f + y
                 }
             }
 
@@ -236,6 +251,8 @@ class Card(val view: View, attrs: AttributeSet) {
     }
 
     fun onMeasure(setSize: (w: Int, h: Int) -> Unit) {
+        width = view.measuredWidth
+        height = view.measuredHeight
         if (dimensionRatio.isNotEmpty()) {
             kotlin.runCatching {
                 val h = view.measuredHeight
@@ -245,6 +262,8 @@ class Card(val view: View, attrs: AttributeSet) {
 
                 if (h == 0) {
                     setSize(w, (w * rh / rw).toInt())
+                    width = w
+                    height = (w * rh / rw).toInt()
                     if (view is ViewGroup) {
                         view.layoutParams.width = w
                         view.layoutParams.height = (w * rh / rw).toInt()
@@ -252,6 +271,8 @@ class Card(val view: View, attrs: AttributeSet) {
                     }
                 } else if (w == 0) {
                     setSize((h * rw / rh).toInt(), h)
+                    width = (h * rw / rh).toInt()
+                    height = h
                     if (view is ViewGroup) {
                         view.layoutParams.width = (h * rw / rh).toInt()
                         view.layoutParams.height = h
@@ -658,7 +679,11 @@ class Card(val view: View, attrs: AttributeSet) {
     }
 
     private fun dpToPx(dp: Float, context: Context): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.resources.displayMetrics).toInt()
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dp,
+            context.resources.displayMetrics
+        ).toInt()
     }
 
 }
