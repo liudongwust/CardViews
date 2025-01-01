@@ -97,7 +97,7 @@ class Card(val view: View, attrs: AttributeSet) {
         strokeWidth = ta.getDimension(R.styleable.Card_card_stroke_width, 0f)
         strokeStyle = ta.getInt(R.styleable.Card_card_stroke_style, INNER)
         dimensionRatio = ta.getString(R.styleable.Card_card_dimension_ratio) ?: ""
-        position = ta.getInt(R.styleable.Card_card_position, 0x0F)
+        position = ta.getInt(R.styleable.Card_card_corner_position, 0x0F)
         cornerType = ta.getInt(R.styleable.Card_card_corner_style, CIRCLE)
         linearGradientStr = ta.getString(R.styleable.Card_card_linear_gradient)
         shadowStr = ta.getString(R.styleable.Card_card_shadow)

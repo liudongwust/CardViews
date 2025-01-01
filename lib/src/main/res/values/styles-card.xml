@@ -35,7 +35,7 @@
             <enum name="OUTER" value="1" />
         </attr>
 
-        <attr name="card_position">
+        <attr name="card_corner_position">
             <flag name="LT" value="0x01" />
             <flag name="RT" value="0x02" />
             <flag name="LB" value="0x04" />
