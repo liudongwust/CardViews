@@ -4,6 +4,6 @@
 ## 用法
 | 代码                                                                    | 图片                                 |
 |-----------------------------------------------------------------------| ------------------------------------ |
-| ```python<br>def hello_world():<br/>    print("Hello, world!")<br>``` | ![img.png](pics/img.png) |
+| ```python<br>def hello_world():<br/>    print("Hello, world!")<br>``` | ![img_1.png](pics/img_1.png) |
 
 
