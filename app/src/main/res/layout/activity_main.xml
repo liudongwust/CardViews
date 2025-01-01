@@ -17,8 +17,7 @@
         <com.wustfly.cardviews.TextCard
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            app:card_linear_gradient="0,2,#E09FA7,#7DCBD5,2,0,1" />
+            app:card_linear_gradient="12.5,3,#E09FA7,#66FFFF00,#7DCBD5,3,0,0.5,1" />
 
     </FrameLayout>
 
