@@ -40,5 +40,5 @@ dependencies {
 
     api(libs.androidx.constraintlayout)
     api(libs.androidx.appcompat)
-    implementation(libs.androidx.viewpager2)
+    api(libs.androidx.viewpager2)
 }
