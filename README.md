@@ -555,7 +555,7 @@
 
     示例：line
     <details>
-    <summary>代码:倒角类型为line</summary>
+    <summary>代码:倒角类型为line,调整倒角长度比例，显示效果为一个正八边形</summary>
   
     ```
     <FrameLayout
@@ -800,3 +800,98 @@
     效果:
   
     ![img_13.png](pics/img_13.png)
+
+- **`阴影`**
+
+    **属性：**
+
+    **card_shadow 阴影模糊半径和颜色**
+
+    格式：R，#66884523  R-模糊半径以dp计算 例如：18,#66884523
+
+    **card_shadow_type 阴影位置**
+
+    取值：all-阴影分布在四周 half-阴影分布在view下半部分(项目中用的较多)
+
+    注意：阴影相关属性需要view的parent配合设置clipChildren=false和clipPadding=false使用
+
+    示例：
+    <details>
+    <summary>代码:阴影效果</summary>    
+
+    ```
+    <FrameLayout
+
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:background="#CCCCCC"
+            android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+            android:gravity="center"
+            android:text="FOR STAR"
+            android:textSize="44sp"
+            android:translationY="-280dp"
+            app:card_radius_percent="50%"
+            app:card_shadow="28,#77000000" />
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:background="#CCCCCC"
+            android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+            android:gravity="center"
+            android:text="FOR STAR"
+            android:textSize="44sp"
+            android:translationY="-88dp"
+            app:card_radius_percent="50%"
+            app:card_shadow="28,#77000000"
+            app:card_shadow_type="half" />
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+            android:gravity="center"
+            android:text="FOR STAR"
+            android:textSize="44sp"
+            android:translationY="280dp"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius_percent="50%"
+            app:card_shadow="28,#CC7DCBD5"
+            app:card_shadow_type="half" />
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="40dp"
+            android:background="#CCCCCC"
+            android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+            android:gravity="center"
+            android:text="FOR STAR"
+            android:textSize="44sp"
+            android:translationY="88dp"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius_percent="50%"
+            app:card_shadow="28,#CC7DCBD5"
+            app:card_shadow_type="all" />
+
+    </FrameLayout>
+    ```
+    </details>
+    
+    ![img_14.png](pics/img_14.png)
+  
