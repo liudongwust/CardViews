@@ -10,12 +10,11 @@
 
     这个格式设计灵感来自网络协议的数据包，用一个字符串来描述线性渐变
 
-    orientation表示线性渐变的方向，可取值如下
+    orientation表示线性渐变的方向，可取值如下：
 
-        字符串类型：
-        LEFT_RIGHT， LT_RB， TOP_BOTTOM， RT_LB， RIGHT_LEFT， RB_LT， BOTTOM_TOP， LB_RT
-        数值类型（表示角度，0表示x轴正方向，角度增加方向为顺时针方向）：
-        0,33.3,45,120...
+    1.字符串类型： LEFT_RIGHT， LT_RB， TOP_BOTTOM， RT_LB， RIGHT_LEFT， RB_LT， BOTTOM_TOP， LB_RT
+
+    2.数值类型（表示角度，0表示x轴正方向，角度增加方向为顺时针方向）： 0,33.3,45,120...
     
     colorsNum表示渐变的颜色采样数
 
