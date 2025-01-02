@@ -3,6 +3,7 @@ agp = "8.7.3"
 kotlin = "1.9.24"
 coreKtx = "1.10.1"
 appcompat = "1.6.1"
+kotlinGradlePlugin = "1.9.0"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.2.0"
@@ -11,6 +12,7 @@ viewpager2 = "1.1.0"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }

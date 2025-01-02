@@ -10,6 +10,9 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id("com.vanniktech.maven.publish") version "0.30.0"
+    }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
