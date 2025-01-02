@@ -245,4 +245,271 @@
     ```
     ![img_8.png](pics/img_8.png)
 
-    **属性：**
+    **属性：card_corner_position 设置需要倒角位置**
+    取值：LT,RT,LB,RB的组合
+    示例：
+    ```
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            app:card_corner_position="LT|RT|LB"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius="60dp" />
+
+    </FrameLayout>
+    ```
+    ![img_9.png](pics/img_9.png)
+    **属性：card_corner_style 设置倒角类型**
+    取值：circle-圆角(default) quad-二次贝塞尔 cubic-三次贝塞尔 line-平角
+    示例：circle和quad
+    ```
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <com.wustfly.cardviews.FrameCard
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:textSize="33sp"
+            app:card_corner_style="circle"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius_percent="50%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                android:paddingHorizontal="10dp"
+                android:text="circle"
+                android:textSize="66sp" />
+
+        </com.wustfly.cardviews.FrameCard>
+
+        <com.wustfly.cardviews.FrameCard
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:textSize="33sp"
+            app:card_corner_style="quad"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius_percent="50%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                android:paddingHorizontal="10dp"
+                android:text="quad"
+                android:textSize="66sp" />
+
+        </com.wustfly.cardviews.FrameCard>
+
+    </LinearLayout>
+    ``` 
+    ![img_10.png](pics/img_10.png)
+    示例：cubic
+    **属性：card_cubic_coefficient 设置倒角类型为cubic时，该参数用来设置拟合系数**
+    ```
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            
+            <com.wustfly.cardviews.FrameCard
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="33sp"
+                app:card_corner_style="cubic"
+                app:card_cubic_coefficient="0"
+                app:card_dimension_ratio="1:1"
+                app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                app:card_radius_percent="50%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:paddingHorizontal="10dp"
+                    android:gravity="center"
+                    android:text="cubic\n0"
+                    android:textSize="33sp" />
+
+            </com.wustfly.cardviews.FrameCard>
+
+            <com.wustfly.cardviews.FrameCard
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="33sp"
+                app:card_corner_style="cubic"
+                app:card_cubic_coefficient="0.2"
+                app:card_dimension_ratio="1:1"
+                app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                app:card_radius_percent="50%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:paddingHorizontal="10dp"
+                    android:text="cubic\n0.2"
+                    android:gravity="center"
+                    android:textSize="33sp" />
+
+            </com.wustfly.cardviews.FrameCard>
+            
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            
+            <com.wustfly.cardviews.FrameCard
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="33sp"
+                app:card_corner_style="cubic"
+                app:card_cubic_coefficient="0.5"
+                app:card_dimension_ratio="1:1"
+                app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                app:card_radius_percent="50%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:paddingHorizontal="10dp"
+                    android:text="cubic\n0.5"
+                    android:gravity="center"
+                    android:textSize="33sp" />
+
+            </com.wustfly.cardviews.FrameCard>
+
+            <com.wustfly.cardviews.FrameCard
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="33sp"
+                app:card_corner_style="cubic"
+                app:card_cubic_coefficient="0.7"
+                app:card_dimension_ratio="1:1"
+                app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                app:card_radius_percent="50%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:paddingHorizontal="10dp"
+                    android:text="cubic\n0.7"
+                    android:gravity="center"
+                    android:textSize="33sp" />
+
+            </com.wustfly.cardviews.FrameCard>
+            
+        </LinearLayout>
+
+
+        <com.wustfly.cardviews.FrameCard
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:textSize="33sp"
+            app:card_corner_style="cubic"
+            app:card_cubic_coefficient="-1.32"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius_percent="50%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                android:paddingHorizontal="10dp"
+                android:gravity="center"
+                android:text="cubic\n-1.32"
+                android:textSize="66sp" />
+
+        </com.wustfly.cardviews.FrameCard>
+
+    </LinearLayout>
+    ``` 
+    ![img_11.png](pics/img_11.png)
+    示例：line
+    ```
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".MainActivity">
+        
+        <com.wustfly.cardviews.FrameCard
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textSize="33sp"
+            app:card_corner_style="line"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius_percent="29.289321881345254%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="line"
+                android:textSize="66sp" />
+
+        </com.wustfly.cardviews.FrameCard>
+
+    </FrameLayout>
+    ``` 
+    ![img_12.png](pics/img_12.png)

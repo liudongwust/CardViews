@@ -11,19 +11,33 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:orientation="vertical"
+        android:padding="10dp"
         tools:context=".MainActivity">
 
-        <com.wustfly.cardviews.TextCard
+        <com.wustfly.cardviews.FrameCard
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:textSize="33sp"
+            app:card_corner_style="line"
             app:card_dimension_ratio="1:1"
             app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-            app:card_radius_LB_percent="90%"
-            app:card_radius_LT_percent="10%"
-            app:card_radius_RB_percent="10%"
-            app:card_radius_RT_percent="90%" />
+            app:card_radius_percent="29.289321881345254%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="line"
+                android:textSize="66sp" />
+
+        </com.wustfly.cardviews.FrameCard>
 
     </FrameLayout>
 

@@ -442,8 +442,8 @@ class Card(val view: View, attrs: AttributeSet) {
 
     private fun getCircleCornerPath(gap: Float = 0f, ratio: Float = 1f): Path {
 
-        val w = view.width.toFloat()
-        val h = view.height.toFloat()
+        val w = width.toFloat()
+        val h = height.toFloat()
 
         //val r = (radius - gap) * ratio
         val r_lt = (radiusLT.let { if (it > 0f) it else radius } - gap) * ratio
