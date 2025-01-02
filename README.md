@@ -336,13 +336,15 @@
 
     **属性：card_corner_style 设置倒角类型**
     取值：circle-圆角(default) quad-二次贝塞尔 cubic-三次贝塞尔 line-平角
-    示例：circle和quad
+    示例：
+    <details>
+    <summary>代码:倒角类型为circle和quad</summary>
+  
     ```
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipChildren="false"
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".MainActivity">
@@ -351,7 +353,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:clipChildren="false"
             android:textSize="33sp"
             app:card_corner_style="circle"
             app:card_dimension_ratio="1:1"
@@ -373,7 +374,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:clipChildren="false"
             android:textSize="33sp"
             app:card_corner_style="quad"
             app:card_dimension_ratio="1:1"
@@ -393,9 +393,17 @@
 
     </LinearLayout>
     ``` 
+    </details>
+    效果:
+    
     ![img_10.png](pics/img_10.png)
+
     示例：cubic
+
     **属性：card_cubic_coefficient 设置倒角类型为cubic时，该参数用来设置拟合系数**
+    <details>
+    <summary>代码:倒角类型为cubic和不同的card_cubic_coefficient</summary>
+  
     ```
     <LinearLayout
         android:id="@+id/main"
@@ -540,8 +548,15 @@
 
     </LinearLayout>
     ``` 
+    </details>
+    效果：
+  
     ![img_11.png](pics/img_11.png)
+
     示例：line
+    <details>
+    <summary>代码:倒角类型为line</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -578,8 +593,12 @@
 
     </FrameLayout>
     ``` 
+    </details>
+    效果：
+  
     ![img_12.png](pics/img_12.png)
-  - **边框** 
+
+- **`边框`** 
 
     **属性：**
 
@@ -588,198 +607,196 @@
     **card_stroke_color 边框颜色**
 
     **card_stroke_style 边框类型 INNER-内边框 OUTER-外边框**
-      示例：
-      ```
-      <FrameLayout
-          android:id="@+id/main"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:clipChildren="false"
-          android:orientation="vertical"
-          tools:context=".MainActivity">
 
-          <TextView
-              android:layout_width="3000dp"
-              android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-              android:gravity="center"
-              android:rotation="90"
-              android:singleLine="true"
-              android:text="STROKE"
-              android:textSize="200sp"
-              android:translationX="20dp" />
+    示例：
+    <details>
+    <summary>代码:各倒角类型的边框效果</summary>
+  
+    ```
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+        <TextView
+            android:layout_width="3000dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+            android:gravity="center"
+            android:rotation="90"
+            android:singleLine="true"
+            android:text="STROKE"
+            android:textSize="200sp"
+            android:translationX="20dp" />
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="circle"
-                      app:card_dimension_ratio="1:1"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="50%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="INNER"
-                      app:card_stroke_width="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="circle"
-                      app:card_dimension_ratio="1:1"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="50%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="OUTER"
-                      app:card_stroke_width="10dp" />
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="circle"
+                    app:card_dimension_ratio="1:1"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="50%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="INNER"
+                    app:card_stroke_width="10dp" />
 
-              </LinearLayout>
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="circle"
+                    app:card_dimension_ratio="1:1"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="50%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="OUTER"
+                    app:card_stroke_width="10dp" />
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+            </LinearLayout>
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="quad"
-                      app:card_dimension_ratio="1:1"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="50%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="INNER"
-                      app:card_stroke_width="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="quad"
-                      app:card_dimension_ratio="1:1"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="50%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="OUTER"
-                      app:card_stroke_width="10dp" />
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="quad"
+                    app:card_dimension_ratio="1:1"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="50%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="INNER"
+                    app:card_stroke_width="10dp" />
 
-              </LinearLayout>
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="quad"
+                    app:card_dimension_ratio="1:1"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="50%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="OUTER"
+                    app:card_stroke_width="10dp" />
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+            </LinearLayout>
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="line"
-                      app:card_dimension_ratio="1:1"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="23%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="INNER"
-                      app:card_stroke_width="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="line"
-                      app:card_dimension_ratio="1:1"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="23%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="OUTER"
-                      app:card_stroke_width="10dp" />
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="line"
+                    app:card_dimension_ratio="1:1"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="23%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="INNER"
+                    app:card_stroke_width="10dp" />
 
-              </LinearLayout>
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="line"
+                    app:card_dimension_ratio="1:1"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="23%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="OUTER"
+                    app:card_stroke_width="10dp" />
 
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+            </LinearLayout>
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="cubic"
-                      app:card_dimension_ratio="1:1"
-                      app:card_cubic_coefficient="-1.32"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="50%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="INNER"
-                      app:card_stroke_width="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                  <com.wustfly.cardviews.TextCard
-                      android:layout_width="0dp"
-                      android:layout_height="0dp"
-                      android:layout_weight="1"
-                      android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
-                      android:gravity="center"
-                      android:text="STARR"
-                      android:textSize="66sp"
-                      app:card_corner_style="cubic"
-                      app:card_dimension_ratio="1:1"
-                      app:card_cubic_coefficient="-1.32"
-                      app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-                      app:card_radius_percent="50%"
-                      app:card_stroke_color="#66429460"
-                      app:card_stroke_style="OUTER"
-                      app:card_stroke_width="10dp" />
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="cubic"
+                    app:card_dimension_ratio="1:1"
+                    app:card_cubic_coefficient="-1.32"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="50%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="INNER"
+                    app:card_stroke_width="10dp" />
 
-              </LinearLayout>
+                <com.wustfly.cardviews.TextCard
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alibaba_puhuiti_105_heavy_105_heavy"
+                    android:gravity="center"
+                    android:text="STARR"
+                    android:textSize="66sp"
+                    app:card_corner_style="cubic"
+                    app:card_dimension_ratio="1:1"
+                    app:card_cubic_coefficient="-1.32"
+                    app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+                    app:card_radius_percent="50%"
+                    app:card_stroke_color="#66429460"
+                    app:card_stroke_style="OUTER"
+                    app:card_stroke_width="10dp" />
 
-          </LinearLayout>
+            </LinearLayout>
 
-      </FrameLayout>
-      ```
-      ![img_13.png](pics/img_13.png)
-      <details>
-      <summary>Linux环境</summary>
+        </LinearLayout>
 
-      ##### 编译
-      xxxx
-
-      ##### 安装
-      xxxx
-      </details>
+    </FrameLayout>
+    ```
+    </details>
+    效果:
+  
+    ![img_13.png](pics/img_13.png)
