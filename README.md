@@ -2,7 +2,7 @@
 一款好用的android倒角（倒圆角，二阶贝塞尔倒角，三阶贝塞尔倒角）、边框、渐变UI基础组件，他是基于原生组件（FrameLayout、LinearLayout、ConstraintLayout、TextView、ImageView）扩展了更多功能，使用这些组件之后你不必再需要写那些烦人的drawable文件;组件的属性在清单文件中能直接被渲染，所见即所得。
 
 ## 用法
-- **线性渐变** 
+- **`线性渐变`**
 
     **属性：card_linear_gradient**   
 
@@ -26,7 +26,7 @@
     示例：    
 
     <details>
-      <summary>代码:两个颜色</summary>
+    <summary>代码:两个颜色渐变</summary>
   
     ```
     <FrameLayout
@@ -43,11 +43,12 @@
     </FrameLayout>
     ```
     </details>
-
+    效果：
+  
     ![img.png](pics/img.png)
 
     <details>
-    <summary>代码:三个颜色</summary>
+    <summary>代码:三个颜色渐变</summary>
   
     ```
     <FrameLayout
@@ -64,10 +65,11 @@
     </FrameLayout>
     ```
     </details>
-
+    效果：
+  
     ![img_1.png](pics/img_1.png)
 
-- **设置View高宽比**
+- **`设置View高宽比`**
 
     **属性：card_dimension_ratio**
 
@@ -81,6 +83,9 @@
 
     示例：
 
+    <details>
+    <summary>代码:高宽比1:1</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -97,7 +102,14 @@
 
     </FrameLayout>
     ```
+    </details>
+    效果：
+  
     ![img_2.png](pics/img_2.png)
+
+    <details>
+    <summary>代码:高宽比1:4</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -114,8 +126,14 @@
 
     </FrameLayout>
     ```
+    </details>
+    效果：
+  
     ![img_3.png](pics/img_3.png)
-    配合LinearLayout的layout_weight属性做比例布局
+
+    <details>
+    <summary>代码:配合LinearLayout的layout_weight属性做比例布局</summary>
+    
     ```
     <LinearLayout
         android:id="@+id/main"
@@ -147,36 +165,48 @@
 
     </LinearLayout>
     ```
+    </details>
+    效果：
+  
     ![img_4.png](pics/img_4.png)
 
-- **倒角**
+- **`倒角`**
 
-  **属性：card_radius 使用xxxdp设置倒角的固定长度** 
+    **属性：card_radius 使用xxxdp设置倒角的固定长度** 
 
-  示例：倒60dp的圆角
-  ```
-  <FrameLayout
-      android:id="@+id/main"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      tools:context=".MainActivity">
+    示例：
+    <details>
+    <summary>代码:倒60dp的圆角</summary>
+  
+    ```
+    <FrameLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-      <com.wustfly.cardviews.TextCard
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_gravity="center"
-          android:layout_marginHorizontal="20dp"
-          app:card_dimension_ratio="1:1"
-          app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
-          app:card_radius="60dp" />
+        <com.wustfly.cardviews.TextCard
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            app:card_dimension_ratio="1:1"
+            app:card_linear_gradient="12.5,2,#E09FA7,#7DCBD5,2,0,1"
+            app:card_radius="60dp" />
 
-  </FrameLayout>
-  ```
-  ![img_5.png](pics/img_5.png)
+    </FrameLayout>
+    ```
+    </details>
+    效果：
+  
+    ![img_5.png](pics/img_5.png)
 
     **属性：card_radius_percent 使用iew高宽较小值为base乘以该值的百分比得到倒角长度**
 
-    示例：通过设置正方形的倒角百分比为50%得到一个圆形view, 通常在圆形头像使用
+    示例：
+    <details>
+    <summary>代码:通过设置正方形的倒角百分比为50%得到一个圆形view, 通常在圆形头像使用</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -195,6 +225,9 @@
 
     </FrameLayout>
     ```
+    </details>
+    效果：
+  
     ![img_6.png](pics/img_6.png)
 
     **属性：
@@ -205,6 +238,9 @@
     单独设置每个角的倒角长度**
 
     示例：
+    <details>
+    <summary>代码:分别设置倒角长度</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -226,6 +262,9 @@
 
     </FrameLayout>
     ```
+    </details>
+    效果：
+  
     ![img_7.png](pics/img_7.png)
 
     **属性：
@@ -236,6 +275,9 @@
     单独设置每个角的倒角长度百分比**
 
     示例：
+    <details>
+    <summary>代码:分别设置倒角长度百分比</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -257,11 +299,17 @@
 
     </FrameLayout>
     ```
+    </details>
+    效果：
+  
     ![img_8.png](pics/img_8.png)
 
     **属性：card_corner_position 设置需要倒角位置**
     取值：LT,RT,LB,RB的组合
     示例：
+    <details>
+    <summary>代码:设置为LT|RT|LB</summary>
+  
     ```
     <FrameLayout
         android:id="@+id/main"
@@ -281,7 +329,11 @@
 
     </FrameLayout>
     ```
+    </details>
+    效果：
+
     ![img_9.png](pics/img_9.png)
+
     **属性：card_corner_style 设置倒角类型**
     取值：circle-圆角(default) quad-二次贝塞尔 cubic-三次贝塞尔 line-平角
     示例：circle和quad
