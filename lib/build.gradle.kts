@@ -46,7 +46,7 @@ dependencies {
 
     api(libs.androidx.constraintlayout)
     api(libs.androidx.appcompat)
-    api(libs.androidx.viewpager2)
+    api(libs.androidx.recyclerview)
 }
 
 mavenPublishing {
@@ -64,7 +64,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("com.wustfly.wult", "cardviews", "1.0.0")
+    coordinates("com.wustfly.wult", "cardviews", "1.0.1")
 
     pom {
         name.set("CardViews")

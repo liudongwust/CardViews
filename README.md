@@ -3,9 +3,8 @@
 
 ## 快速引入
   ```
-  implementation("com.wustfly.wult:cardviews:1.0.0")
+  implementation("com.wustfly.wult:cardviews:1.0.1")
   ```
-    
 
 ## 用法
 - **`线性渐变`**
